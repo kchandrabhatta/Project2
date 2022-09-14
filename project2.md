@@ -11,9 +11,14 @@ Fork & Clone this repo.
 - [ ] In this space below, list **THREE** ideas for your Project 2. For each idea, include [user stories](https://www.atlassian.com/agile/project-management/user-stories) for each idea and a link to the API(s) you want to use for it.
 
 --------------------------------------------------------
-1. 
-2. 
-3.
+1. Recipe App 
+As a user, I want to login to search for recipes using different keywords and save favorites. 
+API: https://spoonacular.com/food-api
+2. Weather App 
+As a user, I want to search for the weather by location and save the locations. As a user, I want to see the weather forecast for the saved locations.
+API: https://openweathermap.org/
+3. News App 
+As a user, I want to search for articles by keywords and save them. API: https://developer.nytimes.com/apis
 ---------------------------------------------------------
 
 - [ ] Make a PR when you're done!
