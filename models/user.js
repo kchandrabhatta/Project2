@@ -1,4 +1,5 @@
 'use strict';
+const bcrypt = require('bcrypt'); // Making a hash password for the user
 const {
   Model
 } = require('sequelize');
@@ -11,6 +12,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.user.hasMany(models.favorite)
+      models.user.hasMany(models.review)
     }
   };
   user.init({
@@ -42,7 +45,32 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'user',
+    modelName: 'user'
   });
+
+  user.addHook('beforeCreate', function(pendingUser) {
+    // Bcrypt hash a password for us
+    let hash = bcrypt.hashSync(pendingUser.password, 12);
+    // Set password to equal the hash
+    pendingUser.password = hash;
+    console.log(pendingUser);
+  });
+  
+  user.prototype.validPassword = function(passwordTyped) {
+    let correctPassword = bcrypt.compareSync(passwordTyped, this.password);
+    console.log('Inside of validPassword', correctPassword);
+    // return true or false based on correct password or not
+    return correctPassword;
+  }
+  
+  // Remove the password before it gets serialized 
+  user.prototype.toJSON = function() {
+    console.log('Inside of the toJSON method');
+    let userData = this.get();
+    delete userData.password;
+    console.log(userData);
+    return userData;
+  }
+
   return user;
 };
