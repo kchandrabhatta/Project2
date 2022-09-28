@@ -1,0 +1,8 @@
+<h1>Search Results:</h1>
+
+<% results.forEach (recipe => {%>
+    <div class="result">
+        <a href="/recipe/<%= recipe.id %>"><h3><%= recipe.title %></h3></a>
+        <a href="/recipe/<%= recipe.id %>"><img src="<%= recipe.image %>" alt="Image of <%= recipe.title %>"></a>
+    </div>
+<% }); %>

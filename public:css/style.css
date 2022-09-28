@@ -1,0 +1,52 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.search {
+    background-image: url(https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/NFOJ7HCOWQI6VFT34B2NGAWH2Q.jpg&w=916);
+    color: white;
+}
+
+h1 {
+    color:white;
+}
+
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.nav li {
+    float: left;
+}
+
+.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    background-color: black;
+}
+
+.result {
+    text-align: center;
+    border: solid 1px goldenrod;
+    margin: 10px;
+    padding: 10px;
+    width: 400px;
+}
+
+img {
+    transition: transform 1s;
+}
+
+img:hover {
+    transform:scale(1.05);
+}

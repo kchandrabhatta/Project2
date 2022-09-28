@@ -1,48 +1,46 @@
 {
-  "name": "express_authentication",
+  "name": "express-authentication",
   "version": "1.0.0",
-  "description": "Express authentication template using Passport + Flash messages + custom middleware",
+  "description": "This is express authentication",
   "main": "server.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "mocha",
-    "start": "node server.js",
-    "nodemon": "nodemon"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SEIRFX-621/express_authentication.git"
+    "url": "git+https://github.com/kchandrabhatta/Project2.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Krishna Chandrabhatta",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SEIRFX-621/express_authentication/issues"
+    "url": "https://github.com/kchandrabhatta/Project2/issues"
   },
-  "homepage": "https://github.com/SEIRFX-621/express_authentication#readme",
-  "devDependencies": {
-    "chai": "^4.3.6",
-    "mocha": "^10.0.0",
-    "supertest": "^6.2.4"
-  },
+  "homepage": "https://github.com/kchandrabhatta/Project2#readme",
   "dependencies": {
-    "@ngneat/falso": "^6.1.0",
-    "axios": "^0.27.2",
-    "bcryptjs": "^2.4.3",
+    "axios": "^0.21.0",
+    "bcrypt": "^5.0.0",
     "connect-flash": "^0.1.1",
-    "dotenv": "^16.0.2",
-    "ejs": "^3.1.8",
-    "express": "^4.18.1",
-    "express-ejs-layouts": "^2.5.1",
-    "express-session": "^1.17.3",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.1",
     "method-override": "^3.0.0",
     "morgan": "^1.10.0",
-    "passport": "^0.6.0",
+    "nodemon": "^2.0.6",
+    "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "pg": "^8.8.0",
-    "pg-hstore": "^2.3.4",
-    "sequelize": "^6.21.6"
+    "pg": "^8.5.1",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "supertest": "^6.0.1"
   }
 }

@@ -3,14 +3,37 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Authentication</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <% if (!currentUser) { %>
+      <title>Authentication</title>
+    <% } else {%>
+      <title>Favorite Recipe Book</title>
+    <% } %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <%- body %> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    <%- include('partials/alerts') %>
+    <header>
+      <nav>
+        <ul class="nav">
+          <% if (!currentUser) { %>
+            <li><a href="/auth/signup">Signup</a></li>
+            <li><a href="/auth/login">Login</a></li>
+          <% } else {%>
+            <li><a href="/auth/logout">Logout</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/recipe">Search for A Recipe</a></li>
+            <li><a href="/recipe/cuisines">Search By Cuisine</a></li>
+            <li><a href="/recipe/favorites">Favorites</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </header>
+    <% if (!currentUser) { %>
+      <h1 id="auth">Authentication</h1>
+    <% } %>
+    <%- body %>
   </body>
 </html>
