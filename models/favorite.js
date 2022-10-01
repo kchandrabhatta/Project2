@@ -14,9 +14,9 @@ module.exports = (sequelize, DataTypes) => {
       models.favorite.belongsTo(models.user)
     }
   };
-  favorite.init({
+  favorite.init({ 
     userId: DataTypes.INTEGER,
-    recipeId: DataTypes.INTEGER,
+    recipeId: DataTypes.INTEGER,               
     title: DataTypes.STRING,
     image: DataTypes.STRING
   }, {

@@ -3,7 +3,6 @@ const router = express.Router();
 const db = require('../models');
 const passport = require('../config/ppConfig');
 
-passport
 
 router.get('/signup', (req, res) => {
   res.render('auth/signup');
@@ -19,6 +18,7 @@ router.post('/signup', (req, res) => {
   db.user.findOrCreate({
     where: { email: req.body.email },
     defaults: {
+      email: req.body.email, 
       name: req.body.name,
       password: req.body.password
     }
